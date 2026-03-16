@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/Python-3.10+-blue.svg" alt="Python Version">
-  <img src="https://img.shields.io/badge/Streamlit-1.32+-red.svg" alt="Streamlit">
-  <img src="https://img.shields.io/badge/Groq-Cloud_Inference-orange.svg" alt="Groq">
-  <img src="https://img.shields.io/badge/FAISS-Vector_DB-green.svg" alt="FAISS">
+  <a href="https://docs.python.org/3.10/" target="_blank"><img src="https://img.shields.io/badge/Python-3.10+-blue.svg" alt="Python Version"></a>
+  <a href="https://docs.streamlit.io/" target="_blank"><img src="https://img.shields.io/badge/Streamlit-1.32+-red.svg" alt="Streamlit"></a>
+  <a href="https://console.groq.com/docs/quickstart" target="_blank"><img src="https://img.shields.io/badge/Groq-Cloud_Inference-orange.svg" alt="Groq"></a>
+  <a href="https://github.com/facebookresearch/faiss/wiki" target="_blank"><img src="https://img.shields.io/badge/FAISS-Vector_DB-green.svg" alt="FAISS"></a>
   
   <h1>🎓 RAGnition</h1>
   <p><b>Hybrid RAG · AI Powered Exam Preparation System</b></p>
