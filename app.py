@@ -167,12 +167,6 @@ with st.sidebar:
     else:
         st.info("ℹ️ Upload PDFs to begin")
     st.divider()
-    st.markdown(f"""<div class='sidebar-info'>
-    <b>Primary:</b> {_status['primary_model']}<br>
-    <b>Fallback:</b> {_status['fallback_model']}<br>
-    <b>Embedder:</b> all-MiniLM-L6-v2<br>
-    <b>Vector DB:</b> FAISS Top-K (k={config.TOP_K})
-    </div>""", unsafe_allow_html=True)
 
 # ── Header ────────────────────────────────────────────────────────────────────
 st.markdown("""
