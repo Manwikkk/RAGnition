@@ -13,6 +13,9 @@ langchain-text-splitters
 # ── Keyword Extraction ───────────────────────────────────────────────────────
 keybert
 
+# ── Hybrid Retrieval (BM25 sparse search) ────────────────────────────────────
+rank-bm25
+
 # ── LLM — Groq (cloud inference) ─────────────────────────────────────────────
 groq
 

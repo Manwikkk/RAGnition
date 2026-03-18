@@ -30,9 +30,9 @@ class Config:
     CHUNK_OVERLAP: int = 80
 
     # ── Embeddings ───────────────────────────────────────────────────────────
-    EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"
-    EMBEDDING_BATCH_SIZE: int = 64
-    EMBEDDING_DIMENSION: int = 384
+    EMBEDDING_MODEL: str = "BAAI/bge-base-en-v1.5"
+    EMBEDDING_BATCH_SIZE: int = 32
+    EMBEDDING_DIMENSION: int = 768
 
     # ── Retrieval ────────────────────────────────────────────────────────────
     TOP_K: int = 3
