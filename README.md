@@ -1,118 +1,103 @@
 <div align="center">
-  <a href="https://docs.python.org/3.10/" target="_blank"><img src="https://img.shields.io/badge/Python-3.10+-blue.svg" alt="Python Version"></a>
-  <a href="https://docs.streamlit.io/" target="_blank"><img src="https://img.shields.io/badge/Streamlit-1.32+-red.svg" alt="Streamlit"></a>
-  <a href="https://console.groq.com/docs/quickstart" target="_blank"><img src="https://img.shields.io/badge/Groq-Cloud_Inference-orange.svg" alt="Groq"></a>
-  <a href="https://github.com/facebookresearch/faiss/wiki" target="_blank"><img src="https://img.shields.io/badge/FAISS-Vector_DB-green.svg" alt="FAISS"></a>
+  <img src="public/favicon.png" alt="RAGnition Logo" width="120" />
+  <h1>RAGnition V2 — Ultimate AI Study Companion</h1>
+  <p><strong>A full-stack, AI-powered platform that transforms your study materials into interactive intelligent learning experiences.</strong></p>
   
-  <h1>🎓 RAGnition</h1>
-  <p><b>Hybrid RAG · AI Powered Exam Preparation System</b></p>
+  <p>
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+    <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+    <img src="https://img.shields.io/badge/GROQ-Llama_3-purple?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/LangChain-gray?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/FAISS-VectorDB-blue?style=for-the-badge" />
+  </p>
 </div>
 
 ---
 
-**RAGnition** is an advanced AI-powered educational tool designed to help students and educators interact with study materials like never before. By seamlessly combining local embeddings (SentenceTransformers + FAISS) for privacy and offline document retrieval with the **Groq API** for lighting-fast cloud inference, RAGnition transforms static PDFs into interactive study sessions, quizzes, and full mock exams.
+> **Note:** The original Streamlit prototype of RAGnition is still available for reference inside the `Streamlit Prototype/` folder.
 
-## ✨ Key Features
+## ✨ Features
 
-- 📄 **Upload & Index PDFs Local-First**: Extracts text via PyMuPDF, chunks it, and creates local embeddings using `all-MiniLM-L6-v2`. Your vector index stays on your machine using FAISS.
-- 💬 **Interactive Document Assistant**: Chat seamlessly with your documents. Ask complex questions, request summaries, or extract key formulas with instant, streaming responses.
-- ❓ **Dynamic Question Generation**: Instantly generate MCQ, True/False, Short, Long, and Case-based questions from any topic at customizable difficulty levels. Participate in interactive, auto-graded quizzes directly in the app.
-- 📋 **Automated Mock Tests**: Assemble comprehensive exam papers with multiple sections, custom mark distributions, and complete answer keys. Downloadable as PDF and TXT.
-- 📥 **Export to PDF**: Generate beautiful, clean PDFs of isolated questions, user quiz results with explanations, and full mock test papers.
+- **🧠 Intelligent Document Chat:** Ask questions, get explanations, and converse naturally with your uploaded PDFs. Powered by local FAISS vector search and Llama-3.
+- **📝 Bulk MCQ Generator:** Generate up to **50 custom Multiple Choice Questions** with instant scoring and detailed AI explanations for every answer.
+- **🎓 Smart Mock Tests:** Generate full-scale exam papers (capped at 100 marks) with an intelligent auto-division algorithm that perfectly balances short, medium, and long-form essay questions based on total marks.
+- **⚡ Auto-Flashcards:** Auto-generate revision flashcards featuring a stunning flip animation, known/unknown tracking, and a progress bar.
+- **📑 Smart Summaries:** Extract key takeaways, core concepts, and actionable study tips instantly. Downloadable directly as PDF.
+- **💅 Premium UI/UX:** Built with beautiful glassmorphism design, custom Framer Motion hover animations (light sweeps, tilt cards, dynamic glows), and a fully responsive layout.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Quick Start Guide
 
-### 1. Clone & Install Dependencies
+### 1. Prerequisites
+- **Node.js** v18+ (for frontend)
+- **Python** 3.10+ (for backend vector database + API)
+- **Groq API Key** (Get it free at [console.groq.com](https://console.groq.com))
+
+### 2. Environment Setup
+Create a `.env` file in the root of the project with your API keys:
+
+```env
+GROQ_API_KEY=your_groq_api_key_here
+GROQ_MODEL=llama-3.3-70b-versatile
+VITE_API_BASE_URL=
+```
+
+### 3. Start the Python Backend
+The backend parses your PDFs, chunks them, creates vector embeddings using `BAAI/bge-base-en-v1.5`, and handles RAG generation.
 
 ```bash
-git clone https://github.com/Manwikkk/RAGnition.git
-cd RAGnition
+cd backend
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# Mac/Linux: source .venv/bin/activate
+
 pip install -r requirements.txt
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
+*(Wait until the terminal reads `Model loaded. CORS configured.`)*
 
-### 2. Configure the Groq API Key
-
-To power the AI responses dynamically, RAGnition relies on Groq for inference. Get a free API key at [console.groq.com](https://console.groq.com).
-
-**Windows:**
-```cmd
-set GROQ_API_KEY=your_api_key_here
-```
-**Mac / Linux:**
-```bash
-export GROQ_API_KEY=your_api_key_here
-```
-*(Alternatively, you can place it entirely in a `.env` file in the root directory).*
-
-### 3. Run the Application
+### 4. Start the React Frontend
+In a **new terminal tab**, from the root of the project:
 
 ```bash
-streamlit run app.py
+npm install
+npm run dev
 ```
+
+Open [http://localhost:8080](http://localhost:8080) to access the platform!
 
 ---
 
-## 🧠 Models & Architecture
+## 📁 Project Architecture
 
-RAGnition is built on a "Hybrid RAG" architecture to maximize both privacy and speed. 
-
-```text
-1. PDF Upload → PyMuPDF extraction → Chunking (500 chars) → SentenceTransformer Embeddings (all-MiniLM-L6-v2) → FAISS Index (Local)
-2. User Query → Embed query → Retrieve top-K chunks → Groq API (Llama 3) → Streaming Answer
-```
-
-### Model Stack
-| Role | Model | Deployment |
-|---|---|---|
-| **Embeddings** | `sentence-transformers/all-MiniLM-L6-v2` | Local, Offline |
-| **Primary LLM** | `llama-3.1-8b-instant` | Groq API (Cloud LPU™) |
-| **Fallback LLM** | `llama-3.3-70b-versatile` | Groq API (Cloud LPU™) |
-
----
-
-## ⚡ Why Groq Instead of Local LLMs?
-
-While running a fully local pipeline is great for absolute privacy, inference for massive context windows often becomes a bottleneck on standard consumer hardware. 
-
-We explicitly chose **Groq's LPU™ (Language Processing Unit)** infrastructure for this project because:
-1. **Unmatched Speed:** Groq delivers ~300-500 tokens per second compared to ~5-30 tokens/sec on local CPUs/GPUs, enabling near-instantaneous streaming of complex, case-based questions and expansive mock exams. 
-2. **Zero Hardware Constraints:** Users without dedicated NVIDIA GPUs can experience state-of-the-art open-source LLMs seamlessly.
-3. **No Setup Friction:** Simply plugging in an API key avoids massive multi-gigabyte model downloads (like a 4.7GB `llama3-8b` `.gguf` file) and prevents memory `OOM` crashes during intensive batch generation.
-
-### 🧪 Local LLM Support (Testing)
-
-Despite being heavily optimized for Groq, **RAGnition contains the foundational code to run entirely locally**! 
-
-Inside `utils/local_llm.py`, you will find a fully functioning local LLM interface utilizing **Ollama**. This allows developers to point generation functions toward models like `llama3.1:8b` or `mistral` running locally on their own machines. 
-*Note: This is currently maintained for development and testing purposes and is isolated from the main `app.py` UI unless explicitly wired up.*
-
----
-
-## 📁 Repository Structure
-
-```
+```plaintext
 RAGnition/
-├── app.py                      # Main Streamlit application
-├── config.py                   # System configurations and parameters
-├── requirements.txt            # Python dependencies
-├── .env                        # Environment variables (API keys)
-└── utils/
-    ├── chunker.py              # Semantic text chunking routines
-    ├── embedder.py             # Local SentenceTransformer embeddings
-    ├── vector_store.py         # FAISS vector database management 
-    ├── retriever.py            # Top-K semantic retrieval logic
-    ├── pdf_loader.py           # PyMuPDF document extraction
-    ├── pdf_exporter.py         # ReportLab PDF building engine
-    ├── question_engine.py      # LLM question generation logic
-    ├── mock_test_generator.py  # Exam paper assembly engine
-    ├── groq_llm.py             # Groq cloud inference client (Active)
-    └── local_llm.py            # Ollama local inference client (Testing)
+├── backend/                  # Python FastAPI Backend
+│   ├── main.py               # RAG logic, FAISS indexing, Groq LLM chains
+│   └── requirements.txt      # Python dependencies
+├── src/                      # React Frontend
+│   ├── components/           # UI Components (Upload, Chat, MCQs, Mock Tests)
+│   ├── context/              # PDF File State Management
+│   ├── lib/                  # Backend API Client
+│   ├── pages/                # Dashboard Layout
+│   └── index.css             # Tailwind & Glassmorphism Keyframes
+├── Streamlit Prototype/      # Legacy V1 Python Application
+├── .env                      # API Configuration
+└── package.json              # Frontend Dependencies
 ```
 
 ---
+
+## 🔧 Troubleshooting
+
+- **Server Connection Error:** Ensure the Python server is actively running on port 8000.
+- **"No text found in PDF":** Ensure you upload text-based PDFs. Image-based scans without OCR are not supported by the current PyPDF loader.
+- **First-time Slow Startup:** The backend downloads the BAAI embedding model (~440MB) on the very first run. All subsequent startups will be instantaneous.
 
 <div align="center">
-  Crafted with ❤️ for students and educators. 
+  <br>
+  <p>Engineered with ❤️ by <b><a href="https://github.com/Manwikkk">Manvik Siddhpura</a></b>.</p>
 </div>

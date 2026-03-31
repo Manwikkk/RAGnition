@@ -1,0 +1,10 @@
+project_id = "vnachsprbstmqyfnromd"
+
+[functions.chat]
+verify_jwt = false
+
+[functions.generate-mcq]
+verify_jwt = false
+
+[functions.generate-mock-test]
+verify_jwt = false
