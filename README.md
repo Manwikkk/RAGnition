@@ -3,7 +3,7 @@
   <p><strong>A full-stack, AI-powered platform that transforms your study materials into interactive intelligent learning experiences.</strong></p>
   
   <p>
-    <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/react-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black" alt="React" />
     <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
     <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI" />
     <img src="https://img.shields.io/badge/Llama_3-0466C8?style=for-the-badge&logo=meta&logoColor=white" alt="Llama 3" />
@@ -26,6 +26,21 @@
 - **⚡ Auto-Flashcards:** Auto-generate revision flashcards featuring a stunning flip animation, known/unknown tracking, and a progress bar.
 - **📑 Smart Summaries:** Extract key takeaways, core concepts, and actionable study tips instantly. Downloadable directly as PDF.
 - **💅 Premium UI/UX:** Built with beautiful glassmorphism design, custom Framer Motion hover animations (light sweeps, tilt cards, dynamic glows), and a fully responsive layout.
+
+---
+
+### 📸 Application Gallery
+*Browse through all features by grabbing the scrollbar below to scroll right!*
+<table>
+  <tr>
+    <td><img src="Screenshots/2.PNG" width="700px" /></td>
+    <td><img src="Screenshots/3.PNG" width="700px" /></td>
+    <td><img src="Screenshots/4.PNG" width="700px" /></td>
+    <td><img src="Screenshots/5.PNG" width="700px" /></td>
+    <td><img src="Screenshots/6.PNG" width="700px" /></td>
+    <td><img src="Screenshots/7.PNG" width="700px" /></td>
+  </tr>
+</table>
 
 ---
 
