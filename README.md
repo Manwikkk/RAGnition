@@ -29,16 +29,20 @@
 
 ---
 
-### 📸 Application Gallery
-*Browse through all features by grabbing the scrollbar below to scroll right!*
+### 📸 Screenshots
+
 <table>
   <tr>
-    <td><img src="Screenshots/2.PNG" width="700px" /></td>
-    <td><img src="Screenshots/3.PNG" width="700px" /></td>
-    <td><img src="Screenshots/4.PNG" width="700px" /></td>
-    <td><img src="Screenshots/5.PNG" width="700px" /></td>
-    <td><img src="Screenshots/6.PNG" width="700px" /></td>
-    <td><img src="Screenshots/7.PNG" width="700px" /></td>
+    <td><img src="Screenshots/2.PNG" width="100%" /></td>
+    <td><img src="Screenshots/3.PNG" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Screenshots/4.PNG" width="100%" /></td>
+    <td><img src="Screenshots/5.PNG" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Screenshots/6.PNG" width="100%" /></td>
+    <td><img src="Screenshots/7.PNG" width="100%" /></td>
   </tr>
 </table>
 
