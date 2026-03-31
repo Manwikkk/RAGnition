@@ -3,18 +3,20 @@
   <p><strong>A full-stack, AI-powered platform that transforms your study materials into interactive intelligent learning experiences.</strong></p>
   
   <p>
-    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-    <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
-    <img src="https://img.shields.io/badge/GROQ-Llama_3-purple?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/LangChain-gray?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/FAISS-VectorDB-blue?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI" />
+    <img src="https://img.shields.io/badge/Llama_3-0466C8?style=for-the-badge&logo=meta&logoColor=white" alt="Llama 3" />
+    <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain" />
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
   </p>
 </div>
 
 ---
 
-> **Note:** The original Streamlit prototype of RAGnition is still available for reference inside the `Streamlit Prototype/` folder.
+<div align="center">
+  <img src="Screenshots/1.PNG" alt="RAGnition Interface" style="border-radius: 12px; max-width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.2);" />
+</div>
 
 ## ✨ Features
 
@@ -83,6 +85,7 @@ RAGnition/
 │   ├── lib/                  # Backend API Client
 │   ├── pages/                # Dashboard Layout
 │   └── index.css             # Tailwind & Glassmorphism Keyframes
+├── Screenshots/              # Application Interface Previews
 ├── Streamlit Prototype/      # Legacy V1 Python Application
 ├── .env                      # API Configuration
 └── package.json              # Frontend Dependencies
@@ -90,11 +93,7 @@ RAGnition/
 
 ---
 
-## 🔧 Troubleshooting
-
-- **Server Connection Error:** Ensure the Python server is actively running on port 8000.
-- **"No text found in PDF":** Ensure you upload text-based PDFs. Image-based scans without OCR are not supported by the current PyPDF loader.
-- **First-time Slow Startup:** The backend downloads the BAAI embedding model (~440MB) on the very first run. All subsequent startups will be instantaneous.
+> **Note:** The original Streamlit prototype of RAGnition is perfectly preserved and available for reference inside the `Streamlit Prototype/` folder!
 
 <div align="center">
   <br>
