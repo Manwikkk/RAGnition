@@ -1,6 +1,5 @@
 <div align="center">
-  <img src="public/favicon.png" alt="RAGnition Logo" width="120" />
-  <h1>RAGnition V2 — Ultimate AI Study Companion</h1>
+  <h1>RAGnition — Your Personal AI Study Companion</h1>
   <p><strong>A full-stack, AI-powered platform that transforms your study materials into interactive intelligent learning experiences.</strong></p>
   
   <p>
