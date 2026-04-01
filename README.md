@@ -172,39 +172,29 @@ Open [http://localhost:8080](http://localhost:8080) — you're ready.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                        USER UPLOADS PDF                      │
+│                  USER UPLOADS PDF                           │
 └──────────────────────────┬──────────────────────────────────┘
                            │
                     ┌──────▼──────┐
-                    │  pypdf      │  Extract raw text
+                    │    pypdf    │  Extract raw text
                     └──────┬──────┘
                            │
                     ┌──────▼──────┐
-                    │  Chunker    │  800-char chunks, 200-char overlap
+                    │   Chunker   │  800-char chunks, 200-char overlap
                     └──────┬──────┘
                            │
                ┌───────────▼───────────┐
-               │  BAAI/bge-base-en-v1.5│  Generate embeddings
+               │ BAAI/bge-base-en-v1.5 │  Generate embeddings
                └───────────┬───────────┘
                            │
           ┌────────────────▼────────────────┐
-          │  FAISS IndexFlatIP  +  BM25Okapi │  Dual index
+          │ FAISS IndexFlatIP  +  BM25Okapi │  Dual index
           └────────────────┬────────────────┘
                            │
                     ┌──────▼──────┐
-                    │  docId      │  Returned to frontend
+                    │    docId    │  Returned to frontend
                     └─────────────┘
 
-         AT QUERY TIME:
-         Query → BM25 scores + Vector scores
-                    │
-              Fusion (α=0.6)
-                    │
-            Top-K excerpts retrieved
-                    │
-            Groq Llama 3 + system prompt
-                    │
-             Grounded AI response
 ```
 
 ---
