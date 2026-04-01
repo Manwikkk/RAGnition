@@ -1,31 +1,48 @@
 <div align="center">
-  <h1>RAGnition — Your Personal AI Study Companion</h1>
-  <p><strong>A full-stack, AI-powered platform that transforms your study materials into interactive intelligent learning experiences.</strong></p>
-  
-  <p>
-    <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React" />
-    <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
-    <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI" />
-    <img src="https://img.shields.io/badge/Llama_3-0466C8?style=for-the-badge&logo=meta&logoColor=white" alt="Llama 3" />
-    <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain" />
-    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  </p>
-</div>
 
----
+<br/>
+
+```
+██████╗  █████╗  ██████╗ ███╗  ██╗██╗████████╗██╗ ██████╗ ███╗  ██╗
+██╔══██╗██╔══██╗██╔════╝ ████╗ ██║██║╚══██╔══╝██║██╔═══██╗████╗ ██║
+██████╔╝███████║██║  ███╗██╔██╗██║██║   ██║   ██║██║   ██║██╔██╗██║
+██╔══██╗██╔══██║██║   ██║██║╚████║██║   ██║   ██║██║   ██║██║╚████║
+██║  ██║██║  ██║╚██████╔╝██║ ╚███║██║   ██║   ██║╚██████╔╝██║ ╚███║
+╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚══╝╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚══╝
+```
+
+### Your Personal AI Study Companion
+
+**Transform any PDF into an intelligent, interactive learning experience.**  
+Chat with documents · Generate MCQs · Create Mock Exams · Auto-Flashcards · Smart Summaries
+
+<br/>
+
+![React](https://img.shields.io/badge/React_18-20232a?style=flat-square&logo=react&logoColor=61DAFB)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Python](https://img.shields.io/badge/Python_3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![Groq](https://img.shields.io/badge/Groq_Llama_3-FF6B35?style=flat-square&logo=meta&logoColor=white)
+![FAISS](https://img.shields.io/badge/FAISS_Vector_DB-0078D4?style=flat-square&logo=databricks&logoColor=white)
+
+<br/>
+
+</div>
 
 <div align="center">
   <img src="Screenshots/1.PNG" alt="RAGnition Interface" style="border-radius: 12px; max-width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.2);" />
 </div>
 
-## ✨ Features
+---
 
-- **🧠 Intelligent Document Chat:** Ask questions, get explanations, and converse naturally with your uploaded PDFs. Powered by local FAISS vector search and Llama-3.
-- **📝 Bulk MCQ Generator:** Generate up to **50 custom Multiple Choice Questions** with instant scoring and detailed AI explanations for every answer.
-- **🎓 Smart Mock Tests:** Generate full-scale exam papers (capped at 100 marks) with an intelligent auto-division algorithm that perfectly balances short, medium, and long-form essay questions based on total marks.
-- **⚡ Auto-Flashcards:** Auto-generate revision flashcards featuring a stunning flip animation, known/unknown tracking, and a progress bar.
-- **📑 Smart Summaries:** Extract key takeaways, core concepts, and actionable study tips instantly. Downloadable directly as PDF.
-- **💅 Premium UI/UX:** Built with beautiful glassmorphism design, custom Framer Motion hover animations (light sweeps, tilt cards, dynamic glows), and a fully responsive layout.
+## What is RAGnition?
+
+RAGnition is a **full-stack AI study platform** that lets you upload any PDF and immediately start learning from it — intelligently. It uses **Retrieval-Augmented Generation (RAG)** to ground every AI response in your actual document, so you get accurate, context-aware answers rather than hallucinations.
+
+Under the hood, your document is chunked, embedded with `BAAI/bge-base-en-v1.5`, and indexed in a FAISS vector store. At query time, hybrid BM25 + vector search retrieves the most relevant excerpts, which are passed to **Llama 3** via Groq's blazing-fast inference API.
+
+> **No cloud uploads. No subscriptions. Your documents stay on your machine.**
 
 ---
 
@@ -48,73 +65,208 @@
 
 ---
 
-## 🚀 Quick Start Guide
+## Features
 
-### 1. Prerequisites
-- **Node.js** v18+ (for frontend)
-- **Python** 3.10+ (for backend vector database + API)
-- **Groq API Key** (Get it free at [console.groq.com](https://console.groq.com))
+| Feature | Description |
+|---|---|
+| 💬 **Document Chat** | Ask questions in natural language and get AI answers grounded in your PDF |
+| 📝 **MCQ Generator** | Generate up to 50 multiple-choice questions with scoring and per-option explanations |
+| 🎓 **Mock Tests** | Full exam papers auto-divided into Section A / B / C by marks weighting |
+| 🃏 **Auto Flashcards** | Flip-card revision with hint system, known/unknown tracking, and progress bar |
+| 📑 **Smart Summary** | Key points, concept glossary, and study tips — downloadable as PDF |
+| 📄 **PDF Export** | Download every output (chat history, MCQs, mock tests, summaries) as formatted PDF |
+| 🎨 **Premium UI** | Glassmorphism design, cursor-reactive 3D tilt cards, Framer Motion animations |
+| 📱 **Fully Responsive** | Works on desktop, tablet, and mobile with native bottom tab navigation |
 
-### 2. Environment Setup
-Create a `.env` file in the root of the project with your API keys:
+---
+
+## Tech Stack
+
+### Frontend
+```
+React 18 + TypeScript    →  UI framework
+Vite 5                   →  Build tool & dev server (with /api proxy)
+Tailwind CSS 3           →  Utility-first styling
+Framer Motion 12         →  Animations & 3D glass tilt effect
+shadcn/ui + Radix UI     →  Accessible component primitives
+React Router v6          →  Client-side routing
+react-markdown           →  Markdown rendering in chat
+```
+
+### Backend
+```
+FastAPI                  →  Async REST API
+pypdf                    →  PDF text extraction
+sentence-transformers    →  BAAI/bge-base-en-v1.5 embeddings
+faiss-cpu                →  Vector similarity search
+rank-bm25                →  Keyword search (hybrid retrieval)
+Groq API                 →  Llama 3 inference (fast & free tier available)
+reportlab                →  Server-side PDF generation
+python-dotenv            →  Environment config
+```
+
+---
+
+## Quick Start
+
+### Prerequisites
+- **Node.js** v18 or higher
+- **Python** 3.10 or higher
+- **Groq API key** — free at [console.groq.com](https://console.groq.com)
+
+---
+
+### Step 1 — Clone & Configure
+
+```bash
+git clone https://github.com/your-username/RAGnition.git
+cd RAGnition
+```
+
+Create a `.env` file in the project root:
 
 ```env
+# Required — get yours free at https://console.groq.com
 GROQ_API_KEY=your_groq_api_key_here
+
+# Model (llama-3.3-70b-versatile recommended)
 GROQ_MODEL=llama-3.3-70b-versatile
+
+# Leave empty — Vite proxy handles routing to backend
 VITE_API_BASE_URL=
 ```
 
-### 3. Start the Python Backend
-The backend parses your PDFs, chunks them, creates vector embeddings using `BAAI/bge-base-en-v1.5`, and handles RAG generation.
+---
+
+### Step 2 — Start the Backend
 
 ```bash
 cd backend
-python -m venv .venv
-# Windows
-.venv\Scripts\activate
-# Mac/Linux: source .venv/bin/activate
 
+# Create a virtual environment (recommended)
+python -m venv .venv
+
+# Activate it
+# Windows:
+.venv\Scripts\activate
+# macOS / Linux:
+source .venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
+
+# Start the server
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
-*(Wait until the terminal reads `Model loaded. CORS configured.`)*
 
-### 4. Start the React Frontend
-In a **new terminal tab**, from the root of the project:
+> **First run:** The embedding model (`BAAI/bge-base-en-v1.5`, ~440 MB) will download automatically.  
+> Wait for the terminal to print: `Embedder ready.`
+
+---
+
+### Step 3 — Start the Frontend
+
+Open a **new terminal** in the project root:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:8080](http://localhost:8080) to access the platform!
+Open [http://localhost:8080](http://localhost:8080) — you're ready.
 
 ---
 
-## 📁 Project Architecture
+## How It Works
 
-```plaintext
-RAGnition/
-├── backend/                  # Python FastAPI Backend
-│   ├── main.py               # RAG logic, FAISS indexing, Groq LLM chains
-│   └── requirements.txt      # Python dependencies
-├── src/                      # React Frontend
-│   ├── components/           # UI Components (Upload, Chat, MCQs, Mock Tests)
-│   ├── context/              # PDF File State Management
-│   ├── lib/                  # Backend API Client
-│   ├── pages/                # Dashboard Layout
-│   └── index.css             # Tailwind & Glassmorphism Keyframes
-├── Screenshots/              # Application Interface Previews
-├── Streamlit Prototype/      # Legacy V1 Python Application
-├── .env                      # API Configuration
-└── package.json              # Frontend Dependencies
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        USER UPLOADS PDF                      │
+└──────────────────────────┬──────────────────────────────────┘
+                           │
+                    ┌──────▼──────┐
+                    │  pypdf      │  Extract raw text
+                    └──────┬──────┘
+                           │
+                    ┌──────▼──────┐
+                    │  Chunker    │  800-char chunks, 200-char overlap
+                    └──────┬──────┘
+                           │
+               ┌───────────▼───────────┐
+               │  BAAI/bge-base-en-v1.5│  Generate embeddings
+               └───────────┬───────────┘
+                           │
+          ┌────────────────▼────────────────┐
+          │  FAISS IndexFlatIP  +  BM25Okapi │  Dual index
+          └────────────────┬────────────────┘
+                           │
+                    ┌──────▼──────┐
+                    │  docId      │  Returned to frontend
+                    └─────────────┘
+
+         AT QUERY TIME:
+         Query → BM25 scores + Vector scores
+                    │
+              Fusion (α=0.6)
+                    │
+            Top-K excerpts retrieved
+                    │
+            Groq Llama 3 + system prompt
+                    │
+             Grounded AI response
 ```
 
 ---
 
-> **Note:** The original Streamlit prototype of RAGnition is perfectly preserved and available for reference inside the `Streamlit Prototype/` folder!
+## Project Structure
+
+```
+RAGnition/
+│
+├── backend/
+│   ├── main.py               # FastAPI app — all RAG logic, endpoints, PDF rendering
+│   └── requirements.txt      # Python dependencies
+│
+├── src/
+│   ├── components/
+│   │   ├── CursorTiltGlassCard.tsx   # 3D glass card with cursor-reactive glare
+│   │   ├── DocumentUpload.tsx        # Landing / upload page
+│   │   ├── ChatInterface.tsx         # Document Q&A chat
+│   │   ├── MCQGenerator.tsx          # MCQ quiz with scoring
+│   │   ├── MockTestGenerator.tsx     # Full exam paper generator
+│   │   ├── SummaryPanel.tsx          # Smart summary with PDF export
+│   │   ├── FlashcardPanel.tsx        # Flip-card revision mode
+│   │   └── GlassCursor.tsx           # Custom glass cursor (desktop)
+│   │
+│   ├── context/
+│   │   └── DocumentContext.tsx       # Global PDF state (docId, fileName)
+│   │
+│   ├── lib/
+│   │   └── ragApi.ts                 # Typed fetch client (uses Vite proxy)
+│   │
+│   ├── pages/
+│   │   └── Dashboard.tsx             # Responsive tabbed dashboard
+│   │
+│   └── index.css                     # Tailwind + glassmorphism tokens
+│
+├── vite.config.ts                    # Dev proxy: /api → localhost:8000
+├── .env                              # API keys & config
+├── package.json
+└── README.md
+```
+
+---
+
+## License
+
+All rights reserved © [Manvik Siddhpura](https://github.com/Manwikkk)
+
+---
 
 <div align="center">
-  <br>
-  <p>Engineered with ❤️ by <b><a href="https://github.com/Manwikkk">Manvik Siddhpura</a></b>.</p>
+
+Built with ❤️ by **Manvik Siddhpura**
+
+*If this project helped you study smarter, give it a ⭐*
+
 </div>
